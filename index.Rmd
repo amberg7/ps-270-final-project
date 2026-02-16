@@ -11,4 +11,4 @@ output:
 
 ## Project thoughts
 
-I am interested in exploring data related to...
+I am interested in exploring data related to political participation among undergraduate students, possibly dinstinguishing between in-state and out-of-state.

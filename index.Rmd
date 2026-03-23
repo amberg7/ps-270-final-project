@@ -12,3 +12,27 @@ output:
 ## Project thoughts
 
 I am interested in exploring data related to political participation among undergraduate students, possibly comparing in-state and out-of-state. It could be useful to understand voting patterns across neighborhoods in Madison as well, analyzing different wards. I also would be interested in possibly analyzing IMF voting patterns, comparing rotating members and permanent members. 
+
+
+## Project Milestone #2
+
+For my final project I would like to find an answer for the following research question: how have prospects for gender equality progressed in response to the electoral competition and changes in national leadership in Algeria from 1989 to present? Decades after the Algerian War, initiatives for advancing the status of Women in Algeria have waned, in response to political instability over the last 3-and-a-half decades. Algeria has experienced several violent coups and wars during the state’s history, in which leadership and electoral party dominance has been in a state of flux.  I would like to study the outcomes for women following changes in electoral dominance of the state’s leading parties, as well as changes in leadership of the head of state. According to my hypothesis, political instability at the highest level and electoral competition have weakened outcomes for gender equality in Algeria. If I were to observe smaller margins in electoral victories and instances of regime change alongside diminished progress for women this would prove my hypothesis correct. To study gender equality outcomes I will use World Bank data on female labor force participation, alongside qualitative research on the status of family protection laws and other relevant legislation. In regards to the explanatory variables, I will study electoral competition via the margin of victory for the President, as well as the dominant party in the Algerian Parliament.
+
+## Code
+
+```{r}
+
+my_data <- read.csv("MyData.csv.csv")
+
+head(my_data)
+
+
+
+```
+
+## Project Milestone #3
+
+```{r}
+
+```
+

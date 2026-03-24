@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["Final Project.Rhistory","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.30/header-attrs.js","index_files/index.rmd","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","MyData.csv.csv","Project-Milestone--2.html","Project-Milestone--2_files/anchor-4.2.2/anchor.min.js","Project-Milestone--2_files/bowser-1.9.3/bowser.min.js","Project-Milestone--2_files/distill-2.2.21/template.v2.js","Project-Milestone--2_files/header-attrs-2.30/header-attrs.js","Project-Milestone--2_files/index.Rmd","Project-Milestone--2_files/jquery-3.6.0/jquery-3.6.0.js","Project-Milestone--2_files/jquery-3.6.0/jquery-3.6.0.min.js","Project-Milestone--2_files/jquery-3.6.0/jquery-3.6.0.min.map","Project-Milestone--2_files/popper-2.6.0/popper.min.js","Project-Milestone--2_files/tippy-6.2.7/tippy-bundle.umd.min.js","Project-Milestone--2_files/tippy-6.2.7/tippy-light-border.css","Project-Milestone--2_files/tippy-6.2.7/tippy.css","Project-Milestone--2_files/tippy-6.2.7/tippy.umd.min.js","Project-Milestone--2_files/webcomponents-2.0.0/webcomponents.js","World Bank Labor Data.xls.zip"]}
+  {"type":"character","attributes":{},"value":["Final Project.Rhistory","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-5-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.30/header-attrs.js","index_files/index.rmd","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","MyData.csv.csv","Project-Milestone--2.html","Project-Milestone--2_files/anchor-4.2.2/anchor.min.js","Project-Milestone--2_files/bowser-1.9.3/bowser.min.js","Project-Milestone--2_files/distill-2.2.21/template.v2.js","Project-Milestone--2_files/header-attrs-2.30/header-attrs.js","Project-Milestone--2_files/index.Rmd","Project-Milestone--2_files/jquery-3.6.0/jquery-3.6.0.js","Project-Milestone--2_files/jquery-3.6.0/jquery-3.6.0.min.js","Project-Milestone--2_files/jquery-3.6.0/jquery-3.6.0.min.map","Project-Milestone--2_files/popper-2.6.0/popper.min.js","Project-Milestone--2_files/tippy-6.2.7/tippy-bundle.umd.min.js","Project-Milestone--2_files/tippy-6.2.7/tippy-light-border.css","Project-Milestone--2_files/tippy-6.2.7/tippy.css","Project-Milestone--2_files/tippy-6.2.7/tippy.umd.min.js","Project-Milestone--2_files/webcomponents-2.0.0/webcomponents.js","World Bank Labor Data.xls.zip"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1614,9 +1614,65 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <h2 id="project-milestone-3">Project Milestone #3</h2>
 <div class="layout-chunk" data-layout="l-body">
-
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyr.tidyverse.org'>tidyr</a></span><span class='op'>)</span></span></code></pre>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>long_data</span> <span class='op'>&lt;-</span> <span class='va'>my_data</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/pivot_longer.html'>pivot_longer</a></span><span class='op'>(</span></span>
+<span>    cols <span class='op'>=</span> <span class='va'>`X1994`</span><span class='op'>:</span><span class='va'>`X2025`</span>,</span>
+<span>    names_to <span class='op'>=</span> <span class='st'>"year"</span>,</span>
+<span>    values_to <span class='op'>=</span> <span class='st'>"labor_participation"</span></span>
+<span>  <span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>-</span><span class='va'>Indicator.Code</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>    <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>Country.Name</span>, <span class='va'>year</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span></span>
+<span>    labor_participation <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>labor_participation</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,</span>
+<span>    .groups <span class='op'>=</span> <span class='st'>"drop"</span></span>
+<span>  <span class='op'>)</span> </span>
+<span></span>
+<span><span class='va'>long_data</span></span></code></pre>
+</div>
+<pre><code># A tibble: 8,512 × 3
+   Country.Name year  labor_participation
+   &lt;chr&gt;        &lt;chr&gt;               &lt;dbl&gt;
+ 1 Afghanistan  X1994                16.7
+ 2 Afghanistan  X1995                16.6
+ 3 Afghanistan  X1996                16.4
+ 4 Afghanistan  X1997                16.2
+ 5 Afghanistan  X1998                16.0
+ 6 Afghanistan  X1999                15.8
+ 7 Afghanistan  X2000                15.6
+ 8 Afghanistan  X2001                15.5
+ 9 Afghanistan  X2002                15.4
+10 Afghanistan  X2003                15.4
+# ℹ 8,502 more rows</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://ggplot2.tidyverse.org'>ggplot2</a></span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>long_data</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>Country.Name</span> <span class='op'>==</span> <span class='st'>"Algeria"</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/grep.html'>gsub</a></span><span class='op'>(</span><span class='st'>"X"</span>, <span class='st'>""</span>, <span class='va'>year</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>year</span>, y <span class='op'>=</span> <span class='va'>labor_participation</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span></span>
+<span>    title <span class='op'>=</span> <span class='st'>"Female Labor Force Participation in Algeria"</span>,</span>
+<span>    x <span class='op'>=</span> <span class='st'>"Year"</span>,</span>
+<span>    y <span class='op'>=</span> <span class='st'>"Participation"</span></span>
+<span>  <span class='op'>)</span> </span></code></pre>
+</div>
+<p><img src="index_files/figure-html5/unnamed-chunk-5-1.png" alt="" width="624" /></p>
+</div>
+<p>`</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

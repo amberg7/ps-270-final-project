@@ -8,7 +8,7 @@ output:
 ---   
    
 
-
+  
 ## Project thoughts
 
 I am interested in exploring data related to political participation among undergraduate students, possibly comparing in-state and out-of-state. It could be useful to understand voting patterns across neighborhoods in Madison as well, analyzing different wards. I also would be interested in possibly analyzing IMF voting patterns, comparing rotating members and permanent members. 

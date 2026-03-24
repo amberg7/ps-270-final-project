@@ -5,8 +5,8 @@ description: "My final project"
 output:
   distill::distill_article:
     self_contained: false
---- 
-  
+---
+
 
 
 ## Project thoughts
@@ -22,65 +22,12 @@ For my final project I would like to find an answer for the following research q
 
 ```{r}
 
-my_data <- read.csv("MyData.csv.csv")
+library(readr)
 
-head(my_data)
+MyData <- read.csv("MyData.csv.csv")
 
+head(MyData)
 
 
 ```
-
-## Project Milestone #3
-
-```{r}
-
-library(dplyr)
-library(tidyr)
-
-```
-
-```{r}
-
-long_data <- my_data |>
-  pivot_longer(
-    cols = `X1994`:`X2025`,
-    names_to = "year",
-    values_to = "labor_participation"
-  ) |>
-  select(-Indicator.Code) |>
-    group_by(Country.Name, year) |>
-  summarize(
-    labor_participation = mean(labor_participation, na.rm = TRUE),
-    .groups = "drop"
-  ) 
-
-long_data
-
-```
-
-
-
-```{r}
-
-library(ggplot2)
-
-```
-
-
-```{r}
-
-long_data |>
-  filter(Country.Name == "Algeria") |>
-  mutate(year = as.numeric(gsub("X", "", year)))|>
-  ggplot(aes(x = year, y = labor_participation)) +
-  geom_line() +
-  labs(
-    title = "Female Labor Force Participation in Algeria",
-    x = "Year",
-    y = "Participation"
-  ) 
-
-```
-
-`
 

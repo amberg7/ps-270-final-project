@@ -1,5 +1,5 @@
 ---
-title: "Gov 50 Final Project"
+title: "PS 270 Final Project"
 author: "Ava Berg"
 description: "My final project"
 output:
@@ -24,10 +24,23 @@ For my final project I would like to find an answer for the following research q
 
 library(readr)
 
-MyData <- read.csv("MyData.csv.csv")
+MyData <- read.csv("MyData.csv")
 
 head(MyData)
 
 
 ```
+```{r}
+library(dplyr)
 
+   MyData <- MyData
+   filter(!is.na(female_labor_force))
+
+```
+
+
+```{r}
+
+getwd()
+
+```

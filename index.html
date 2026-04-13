@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["Final Project.Rhistory","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-5-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.30/header-attrs.js","index_files/index.rmd","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","MyData.csv.csv","Project-Milestone--2.html","Project-Milestone--2_files/anchor-4.2.2/anchor.min.js","Project-Milestone--2_files/bowser-1.9.3/bowser.min.js","Project-Milestone--2_files/distill-2.2.21/template.v2.js","Project-Milestone--2_files/header-attrs-2.30/header-attrs.js","Project-Milestone--2_files/index.Rmd","Project-Milestone--2_files/jquery-3.6.0/jquery-3.6.0.js","Project-Milestone--2_files/jquery-3.6.0/jquery-3.6.0.min.js","Project-Milestone--2_files/jquery-3.6.0/jquery-3.6.0.min.map","Project-Milestone--2_files/popper-2.6.0/popper.min.js","Project-Milestone--2_files/tippy-6.2.7/tippy-bundle.umd.min.js","Project-Milestone--2_files/tippy-6.2.7/tippy-light-border.css","Project-Milestone--2_files/tippy-6.2.7/tippy.css","Project-Milestone--2_files/tippy-6.2.7/tippy.umd.min.js","Project-Milestone--2_files/webcomponents-2.0.0/webcomponents.js","World Bank Labor Data.xls.zip"]}
+  {"type":"character","attributes":{},"value":["Final Project.Rhistory","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-5-1.png","index_files/figure-html5/unnamed-chunk-9-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.30/header-attrs.js","index_files/index.rmd","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","MyData.csv.csv","Project-Milestone--2.html","Project-Milestone--2_files/anchor-4.2.2/anchor.min.js","Project-Milestone--2_files/bowser-1.9.3/bowser.min.js","Project-Milestone--2_files/distill-2.2.21/template.v2.js","Project-Milestone--2_files/header-attrs-2.30/header-attrs.js","Project-Milestone--2_files/index.Rmd","Project-Milestone--2_files/jquery-3.6.0/jquery-3.6.0.js","Project-Milestone--2_files/jquery-3.6.0/jquery-3.6.0.min.js","Project-Milestone--2_files/jquery-3.6.0/jquery-3.6.0.min.map","Project-Milestone--2_files/popper-2.6.0/popper.min.js","Project-Milestone--2_files/tippy-6.2.7/tippy-bundle.umd.min.js","Project-Milestone--2_files/tippy-6.2.7/tippy-light-border.css","Project-Milestone--2_files/tippy-6.2.7/tippy.css","Project-Milestone--2_files/tippy-6.2.7/tippy.umd.min.js","Project-Milestone--2_files/webcomponents-2.0.0/webcomponents.js","World Bank Labor Data.xls.zip"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1671,8 +1671,219 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <p><img src="index_files/figure-html5/unnamed-chunk-5-1.png" alt="" width="624" /></p>
 </div>
-<p>`</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Final Project Milestone #4:</p>
+<p>Your article should contain one visualization and one analysis that attempts to answer your research question. There does not need to be a long discussion, but the results should be presented in either a second visualization or a nicely formatted table.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://jeroen.r-universe.dev/jsonlite'>jsonlite</a></span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'># Fetch the data</span></span>
+<span><span class='va'>democracy_data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='st'>"https://ourworldindata.org/grapher/electoral-democracy-index.csv?v=1&amp;csvType=full&amp;useColumnShortNames=false"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='co'># Fetch the metadata</span></span>
+<span><span class='va'>metadata</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://jeroen.r-universe.dev/jsonlite/reference/fromJSON.html'>fromJSON</a></span><span class='op'>(</span><span class='st'>"https://ourworldindata.org/grapher/electoral-democracy-index.metadata.json?v=1&amp;csvType=full&amp;useColumnShortNames=false"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>democracy_data</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>       Entity Code Year Electoral.Democracy.Index
+1 Afghanistan  AFG 1789                     0.019
+2 Afghanistan  AFG 1790                     0.019
+3 Afghanistan  AFG 1791                     0.019
+4 Afghanistan  AFG 1792                     0.019
+5 Afghanistan  AFG 1793                     0.019
+6 Afghanistan  AFG 1794                     0.019
+  World.region.according.to.OWID
+1                           Asia
+2                           Asia
+3                           Asia
+4                           Asia
+5                           Asia
+6                           Asia</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
+<span></span>
+<span></span>
+<span><span class='va'>algeria_data</span> <span class='op'>&lt;-</span> <span class='va'>democracy_data</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>Entity</span> <span class='op'>==</span> <span class='st'>"Algeria"</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>Entity</span>, <span class='va'>Year</span>, <span class='va'>Electoral.Democracy.Index</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>algeria_data</span></span></code></pre>
+</div>
+<pre><code>     Entity Year Electoral.Democracy.Index
+1   Algeria 1900                     0.041
+2   Algeria 1901                     0.041
+3   Algeria 1902                     0.041
+4   Algeria 1903                     0.041
+5   Algeria 1904                     0.041
+6   Algeria 1905                     0.041
+7   Algeria 1906                     0.041
+8   Algeria 1907                     0.041
+9   Algeria 1908                     0.041
+10  Algeria 1909                     0.041
+11  Algeria 1910                     0.041
+12  Algeria 1911                     0.041
+13  Algeria 1912                     0.041
+14  Algeria 1913                     0.041
+15  Algeria 1914                     0.041
+16  Algeria 1915                     0.041
+17  Algeria 1916                     0.041
+18  Algeria 1917                     0.041
+19  Algeria 1918                     0.041
+20  Algeria 1919                     0.041
+21  Algeria 1920                     0.041
+22  Algeria 1921                     0.041
+23  Algeria 1922                     0.041
+24  Algeria 1923                     0.040
+25  Algeria 1924                     0.040
+26  Algeria 1925                     0.040
+27  Algeria 1926                     0.043
+28  Algeria 1927                     0.045
+29  Algeria 1928                     0.045
+30  Algeria 1929                     0.045
+31  Algeria 1930                     0.045
+32  Algeria 1931                     0.045
+33  Algeria 1932                     0.045
+34  Algeria 1933                     0.045
+35  Algeria 1934                     0.045
+36  Algeria 1935                     0.045
+37  Algeria 1936                     0.045
+38  Algeria 1937                     0.045
+39  Algeria 1938                     0.045
+40  Algeria 1939                     0.045
+41  Algeria 1940                     0.045
+42  Algeria 1941                     0.045
+43  Algeria 1942                     0.045
+44  Algeria 1943                     0.045
+45  Algeria 1944                     0.045
+46  Algeria 1945                     0.047
+47  Algeria 1946                     0.072
+48  Algeria 1947                     0.072
+49  Algeria 1948                     0.088
+50  Algeria 1949                     0.094
+51  Algeria 1950                     0.094
+52  Algeria 1951                     0.094
+53  Algeria 1952                     0.104
+54  Algeria 1953                     0.077
+55  Algeria 1954                     0.077
+56  Algeria 1955                     0.088
+57  Algeria 1956                     0.083
+58  Algeria 1957                     0.075
+59  Algeria 1958                     0.075
+60  Algeria 1959                     0.075
+61  Algeria 1960                     0.075
+62  Algeria 1961                     0.075
+63  Algeria 1962                     0.076
+64  Algeria 1963                     0.189
+65  Algeria 1964                     0.186
+66  Algeria 1965                     0.131
+67  Algeria 1966                     0.084
+68  Algeria 1967                     0.084
+69  Algeria 1968                     0.084
+70  Algeria 1969                     0.084
+71  Algeria 1970                     0.084
+72  Algeria 1971                     0.084
+73  Algeria 1972                     0.084
+74  Algeria 1973                     0.084
+75  Algeria 1974                     0.084
+76  Algeria 1975                     0.084
+77  Algeria 1976                     0.088
+78  Algeria 1977                     0.187
+79  Algeria 1978                     0.192
+80  Algeria 1979                     0.193
+81  Algeria 1980                     0.195
+82  Algeria 1981                     0.195
+83  Algeria 1982                     0.204
+84  Algeria 1983                     0.206
+85  Algeria 1984                     0.205
+86  Algeria 1985                     0.205
+87  Algeria 1986                     0.205
+88  Algeria 1987                     0.207
+89  Algeria 1988                     0.206
+90  Algeria 1989                     0.222
+91  Algeria 1990                     0.350
+92  Algeria 1991                     0.350
+93  Algeria 1992                     0.188
+94  Algeria 1993                     0.173
+95  Algeria 1994                     0.179
+96  Algeria 1995                     0.186
+97  Algeria 1996                     0.332
+98  Algeria 1997                     0.319
+99  Algeria 1998                     0.312
+100 Algeria 1999                     0.328
+101 Algeria 2000                     0.326
+102 Algeria 2001                     0.326
+103 Algeria 2002                     0.326
+104 Algeria 2003                     0.331
+105 Algeria 2004                     0.333
+106 Algeria 2005                     0.335
+107 Algeria 2006                     0.335
+108 Algeria 2007                     0.334
+109 Algeria 2008                     0.329
+110 Algeria 2009                     0.327
+111 Algeria 2010                     0.322
+112 Algeria 2011                     0.322
+113 Algeria 2012                     0.324
+114 Algeria 2013                     0.327
+115 Algeria 2014                     0.324
+116 Algeria 2015                     0.331
+117 Algeria 2016                     0.308
+118 Algeria 2017                     0.309
+119 Algeria 2018                     0.305
+120 Algeria 2019                     0.293
+121 Algeria 2020                     0.279
+122 Algeria 2021                     0.282
+123 Algeria 2022                     0.269
+124 Algeria 2023                     0.265
+125 Algeria 2024                     0.260
+126 Algeria 2025                     0.265</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>algeria_data1</span> <span class='op'>&lt;-</span> <span class='va'>long_data</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>Country.Name</span> <span class='op'>==</span> <span class='st'>"Algeria"</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>year <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/grep.html'>gsub</a></span><span class='op'>(</span><span class='st'>"X"</span>, <span class='st'>""</span>, <span class='va'>year</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> </span>
+<span></span>
+<span></span>
+<span><span class='va'>algeria_data1</span> <span class='op'>&lt;-</span> <span class='va'>algeria_data1</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/rename.html'>rename</a></span><span class='op'>(</span>Entity <span class='op'>=</span> <span class='va'>Country.Name</span>, Year <span class='op'>=</span> <span class='va'>year</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>algeria_data1</span></span></code></pre>
+</div>
+<pre><code># A tibble: 32 × 3
+   Entity   Year labor_participation
+   &lt;chr&gt;   &lt;dbl&gt;               &lt;dbl&gt;
+ 1 Algeria  1994                12.2
+ 2 Algeria  1995                12.3
+ 3 Algeria  1996                12.5
+ 4 Algeria  1997                12.7
+ 5 Algeria  1998                12.8
+ 6 Algeria  1999                13.0
+ 7 Algeria  2000                13.2
+ 8 Algeria  2001                13.4
+ 9 Algeria  2002                13.7
+10 Algeria  2003                13.9
+# ℹ 22 more rows</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>merged_data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate-joins.html'>inner_join</a></span><span class='op'>(</span><span class='va'>algeria_data1</span>, <span class='va'>algeria_data</span>, by <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Entity"</span>, <span class='st'>"Year"</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>merged_data</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Electoral.Democracy.Index</span>, y <span class='op'>=</span> <span class='va'>labor_participation</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span></span>
+<span>    x <span class='op'>=</span> <span class='st'>"Electoral Demcracy Score"</span>,</span>
+<span>    y <span class='op'>=</span> <span class='st'>"Women's Labor Participation"</span>,</span>
+<span>    title <span class='op'>=</span> <span class='st'>"Electoral Competition and Female Empowerment in Algeria"</span></span>
+<span>  <span class='op'>)</span> </span></code></pre>
+</div>
+<p><img src="index_files/figure-html5/unnamed-chunk-9-1.png" alt="" width="624" /></p>
+</div>
+<p>Analysis:</p>
+<p>In this visualization I compared female labor force participation from the World Bank, alongside Algeria’s electoral democracy score. The electoral democracy score was sourced from the Electoral Democracy Index and analyzing the competitiveness of Algeria’s democratic system, beginning in the year 1994. When comparing these two variables, it appears there is not evidence of a correlation between democracy competitiveness and female empowerment. Confounding factors, such as microeconomic conditions, are likely to have a larger impact on the status of women in Algeria, as opposed to electoral competition.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

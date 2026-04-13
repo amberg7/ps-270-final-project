@@ -82,5 +82,77 @@ long_data |>
 
 ```
 
-`
+Final Project Milestone #4:
+
+Your article should contain one visualization and one analysis that attempts to answer your research question. There does not need to be a long discussion, but the results should be presented in either a second visualization or a nicely formatted table.
+
+
+
+
+
+```{r}
+
+library(jsonlite)
+
+# Fetch the data
+democracy_data <- read.csv("https://ourworldindata.org/grapher/electoral-democracy-index.csv?v=1&csvType=full&useColumnShortNames=false")
+
+# Fetch the metadata
+metadata <- fromJSON("https://ourworldindata.org/grapher/electoral-democracy-index.metadata.json?v=1&csvType=full&useColumnShortNames=false")
+
+head(democracy_data)
+
+```
+
+
+```{r}
+
+library(tidyverse)
+
+
+algeria_data <- democracy_data |>
+  filter(Entity == "Algeria") |>
+  select(Entity, Year, Electoral.Democracy.Index)
+
+algeria_data
+
+algeria_data1 <- long_data |>
+  filter(Country.Name == "Algeria") |>
+  mutate(year = as.numeric(gsub("X", "", year))) 
+
+
+algeria_data1 <- algeria_data1 |>
+  rename(Entity = Country.Name, Year = year)
+
+algeria_data1
+
+
+```
+
+```{r}
+
+merged_data <- inner_join(algeria_data1, algeria_data, by = c("Entity", "Year"))
+
+```
+
+
+```{r}
+  ggplot(merged_data, aes(x = Electoral.Democracy.Index, y = labor_participation)) +
+  geom_line() +
+  labs(
+    x = "Electoral Demcracy Score",
+    y = "Women's Labor Participation",
+    title = "Electoral Competition and Female Empowerment in Algeria"
+  ) 
+
+
+
+```
+
+
+Analysis:
+
+In this visaulization I compared Women's labor participation from the Wolrd Bank, alongside Algeria's electoral democracy score overthe Electoral Democracy Index, beginning in 1994. When comparing these two variables, it appears there is not evidence of a relationship between democracy competitiveness and female empowerment. 
+
+ 
 

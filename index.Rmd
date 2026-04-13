@@ -149,10 +149,10 @@ merged_data <- inner_join(algeria_data1, algeria_data, by = c("Entity", "Year"))
 
 ```
 
-
+   
 Analysis:
 
-In this visaulization I compared Women's labor participation from the Wolrd Bank, alongside Algeria's electoral democracy score overthe Electoral Democracy Index, beginning in 1994. When comparing these two variables, it appears there is not evidence of a relationship between democracy competitiveness and female empowerment. 
+In this visualization I compared female labor force participation from the World Bank, alongside Algeria's electoral democracy score. The electoral democracy score was sourced from the Electoral Democracy Index and analyzing the competitiveness of Algeria's democratic system, beginning in the year 1994. When comparing these two variables, it appears there is not evidence of a correlation between democracy competitiveness and female empowerment. Confounding factors, such as microeconomic conditions, are likely to have a larger impact on the status of women in Algeria, as opposed to electoral competition.   
 
  
 

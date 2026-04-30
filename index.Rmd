@@ -82,7 +82,7 @@ algeria_data1 <- long_data |>
 
 
 algeria_data1 <- algeria_data1 |>
-  rename(Entity = Country.Name, Year = year)
+  rename(Entity = Country.Name, Year = year)  
 
 
 

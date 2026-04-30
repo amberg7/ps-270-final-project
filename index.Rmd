@@ -88,7 +88,7 @@ algeria_data1 <- algeria_data1 |>
 
  
 ```
-
+  
 ```{r}
 
 merged_data <- inner_join(algeria_data1, algeria_data, by = c("Entity", "Year"))

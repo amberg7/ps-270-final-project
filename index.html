@@ -1544,10 +1544,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
-<h2 id="project-thoughts">Project thoughts</h2>
-<p>I am interested in exploring data related to political participation among undergraduate students, possibly comparing in-state and out-of-state. It could be useful to understand voting patterns across neighborhoods in Madison as well, analyzing different wards. I also would be interested in possibly analyzing IMF voting patterns, comparing rotating members and permanent members.</p>
-<h2 id="project-milestone-2">Project Milestone #2</h2>
-<p>For my final project I would like to find an answer for the following research question: how have prospects for gender equality progressed in response to the electoral competition and changes in national leadership in Algeria from 1989 to present? Decades after the Algerian War, initiatives for advancing the status of Women in Algeria have waned, in response to political instability over the last 3-and-a-half decades. Algeria has experienced several violent coups and wars during the state’s history, in which leadership and electoral party dominance has been in a state of flux. I would like to study the outcomes for women following changes in electoral dominance of the state’s leading parties, as well as changes in leadership of the head of state. According to my hypothesis, political instability at the highest level and electoral competition have weakened outcomes for gender equality in Algeria. If I were to observe smaller margins in electoral victories and instances of regime change alongside diminished progress for women this would prove my hypothesis correct. To study gender equality outcomes I will use World Bank data on female labor force participation, alongside qualitative research on the status of family protection laws and other relevant legislation. In regards to the explanatory variables, I will study electoral competition via the margin of victory for the President, as well as the dominant party in the Algerian Parliament.</p>
+<p>Introduction:</p>
+<p>Political scientists have long studied what factors promote democracy. In 2008, Valentine Mogham proposed that women’s empowerment and equality were vital to sustaining a democracy. Thus, I would like to analyze how gender equality has progressed alongside democratic backsliding. I would like to find an answer for the following research question: how have prospects for gender equality progressed in response to the electoral competition in Algeria from 1994 to present? According to my hypothesis, democratic backsliding is associated with worse outcomes for female empowerment in Algeria. These findings are important for forming a greater understanding of how to promote and sustain democracy.</p>
+<p>Data:
+To evaluate this hypothesis I will use two key variables. The independent variable is the strength of Algeria’s democracy, which will be measured via the data from the Electoral Democracy Index.The Electoral Democracy Index estimates the extent to which political leaders are elected under comprehensive voting rights in free and fair elections, where freedoms of association and expression are guaranteed on a scale of 0 to 1. To measure my dependent variable, gender equality outcomes, I will use World Bank data on female labor force participation. Female labor force participation intersects with various aspects of female empowerment, such as economic independence and the ability to work outside of the home. Below, a chart visualizes these two variables. Each variable will be evaluated from data beginning in 1989, when the National People’s Assembly revokes the ban on new political parties.
+I expect to observe lower electoral democracy index scores, alongside decreasing female labor force participation. I will run a regression in which the dependent/outcome variable is female empowerment and the independent/explanatory variable is the strength of Algeria’s democracy. To reject my hypothesis I would expect to see a positive correlation from the regression coefficient. Additionally, if there is not sufficient evidence to reject the null hypothesis that there is not a relationship between democracy and female empowerment. On the other hand, the alternative hypothesis would suggest that higher electoral democracy index scores were correlated with higher scores for female labor force participation.</p>
 <h2 id="code">Code</h2>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -1671,8 +1672,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <p><img src="index_files/figure-html5/unnamed-chunk-5-1.png" alt="" width="624" /></p>
 </div>
-<p>Final Project Milestone #4:</p>
-<p>Your article should contain one visualization and one analysis that attempts to answer your research question. There does not need to be a long discussion, but the results should be presented in either a second visualization or a nicely formatted table.</p>
+<p><br />
+</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://jeroen.r-universe.dev/jsonlite'>jsonlite</a></span><span class='op'>)</span></span>
@@ -1869,21 +1870,51 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>merged_data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate-joins.html'>inner_join</a></span><span class='op'>(</span><span class='va'>algeria_data1</span>, <span class='va'>algeria_data</span>, by <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Entity"</span>, <span class='st'>"Year"</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
+<p>maybe try showing the points (geom_point) and the linear relationship (geom_smooth)</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>merged_data</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>Electoral.Democracy.Index</span>, y <span class='op'>=</span> <span class='va'>labor_participation</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span></span>
-<span>    x <span class='op'>=</span> <span class='st'>"Electoral Demcracy Score"</span>,</span>
+<span>    x <span class='op'>=</span> <span class='st'>"Electoral Demcracy Index Score"</span>,</span>
 <span>    y <span class='op'>=</span> <span class='st'>"Women's Labor Participation"</span>,</span>
-<span>    title <span class='op'>=</span> <span class='st'>"Electoral Competition and Female Empowerment in Algeria"</span></span>
-<span>  <span class='op'>)</span> </span></code></pre>
+<span>    title <span class='op'>=</span> <span class='st'>"Electoral Democracy and Female Empowerment in Algeria"</span>,</span>
+<span>    subtitle <span class='op'>=</span> <span class='st'>"1994-2025"</span></span>
+<span>  <span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span>method <span class='op'>=</span> <span class='st'>"lm"</span>, se <span class='op'>=</span> <span class='cn'>FALSE</span>, color <span class='op'>=</span> <span class='st'>"indianred1"</span>, size <span class='op'>=</span> <span class='fl'>1.5</span><span class='op'>)</span></span></code></pre>
 </div>
 <p><img src="index_files/figure-html5/unnamed-chunk-9-1.png" alt="" width="624" /></p>
 </div>
-<p>Analysis:</p>
-<p>In this visualization I compared female labor force participation from the World Bank, alongside Algeria’s electoral democracy score. The electoral democracy score was sourced from the Electoral Democracy Index and analyzing the competitiveness of Algeria’s democratic system, beginning in the year 1994. When comparing these two variables, it appears there is not evidence of a correlation between democracy competitiveness and female empowerment. Confounding factors, such as microeconomic conditions, are likely to have a larger impact on the status of women in Algeria, as opposed to electoral competition.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>labor_participation</span> <span class='op'>~</span> <span class='va'>Electoral.Democracy.Index</span>, data <span class='op'>=</span> <span class='va'>merged_data</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>
+Call:
+lm(formula = labor_participation ~ Electoral.Democracy.Index, 
+    data = merged_data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.9805 -1.8843  0.6287  1.7121  2.0322 
+
+Coefficients:
+                          Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)                 14.050      2.623   5.356 8.53e-06 ***
+Electoral.Democracy.Index    4.398      8.547   0.515    0.611    
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 1.88 on 30 degrees of freedom
+Multiple R-squared:  0.008748,  Adjusted R-squared:  -0.02429 
+F-statistic: 0.2648 on 1 and 30 DF,  p-value: 0.6106</code></pre>
+</div>
+<p>Results:</p>
+<p>After the regression analysis, I found the following coefficients: (Intercept): 14.050, Electoral.Democracy.Index: 4.398. Therefore, when the democracy score is zero, we could expect female labor participation to be approximately 14.1%. The slope of 4.398 indicates that when democracy increases from 0 to 1, we can expect female labor force participation to increase by 4.398.
+However, it would appear that democracy is not correlated with female labor force participation in Algeria. The p-value of 0.611 is less than 0.05, so we are unable to reject the null hypothesis. Additionally, the R² statistic is 0.008748, which means that the regression model can only explain 0.9% of the variation in female labor force participation.</p>
+<p>Conclusion:</p>
+<p>Since the null hypothesis has not been rejected and the r-squared statistic is extremely low, democracy cannot be attributed as a cause of improved gender empowerment outcomes in the context of Algeria 1994 onward. Instead, it is possible that cultural norms surrounding gender, as well as economic conditions may play a larger role in shaping female labor force participation. There are also other methods to study female empowerment, such as female representation in government which would offer a more complete picture of gender equality in Algeria. If I had more time and money I would include female representation in Algeria’s national and local governments, as well as similar regressions for Morocco and Tunisia. This is because these countries have also had revolutionary pasts and are part of the Maghreb as well.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

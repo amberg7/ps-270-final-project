@@ -145,8 +145,8 @@ maybe try showing the points (geom_point) and the linear relationship (geom_smoo
   geom_smooth(method = "lm", se = FALSE, color = "indianred1", size = 1.5)
 
 ```
-
-
+  
+   
 ```{r}
 
 summary(lm(labor_participation ~ Electoral.Democracy.Index, data = merged_data))

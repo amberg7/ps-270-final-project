@@ -86,7 +86,7 @@ algeria_data1 <- algeria_data1 |>
 
 
 
-
+ 
 ```
 
 ```{r}

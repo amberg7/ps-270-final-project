@@ -4,7 +4,7 @@ author: "Ava Berg"
 description: "My final project"
 output:
   distill::distill_article:  
-    self_contained: false 
+    self_contained: false    
 ---   
   
    Political scientists have long studied what factors promote democracy. In 2008, Valentine Mogham proposed that women’s empowerment and equality were vital to sustaining a democracy. Thus, I would like to analyze how gender equality has progressed alongside democratic backsliding.I will perform a longitudinal observational study to find an answer to the following research question: how have prospects for gender equality progressed in response to the electoral competition in Algeria from 1994 to present? According to my hypothesis, democratic backsliding is associated with worse outcomes for female empowerment in Algeria. These findings are important for forming a greater understanding of how to promote and sustain democracy. 
